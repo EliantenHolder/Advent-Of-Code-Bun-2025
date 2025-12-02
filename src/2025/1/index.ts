@@ -1,10 +1,11 @@
 import partOne from "./1";
 import partTwo from "./2";
-
+import example from "./example.txt";
 // With Bun, text files can be imported as strings
 import input from "./input.txt";
 
-const inputArray = input.split("\n");
+const useExample = process.env.AOC_EXAMPLE === "1";
+const inputArray = (useExample ? example : input).split("\n");
 
 const start = performance.now();
 

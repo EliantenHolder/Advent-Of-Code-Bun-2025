@@ -22,9 +22,13 @@ bun install
 **3. Run a solution**
 
 ```bash
-bun run aoc 2025 1      # Run once (2025 = year, 1 = day)
-bun run aoc:watch 2025 1 # Run with hot reload
+bun run aoc 2025 1              # Run with actual input (2025 = year, 1 = day)
+bun run aoc 2025 1 --example    # Run with example input
+bun run aoc 2025 1 -e           # Short flag for example
+bun run aoc:watch 2025 1 -e     # Hot reload with example
 ```
+
+Use the `--example` (or `-e`) flag to quickly test with the shorter example input before running against the full input.
 
 ## 📁 Structure
 
@@ -41,7 +45,7 @@ src/2025/1/
 
 ## 💡 Notes
 
-- Use `example.txt` to test with the puzzle's example data
+- Use the `--example` or `-e` flag to test with example input before running the full puzzle
 - Execution time is automatically measured for each part
 - Use `bun run aoc:watch` for quick iteration with hot reload
 - Code is formatted with [Biome](https://biomejs.dev/) via `bun run format`
