@@ -1,97 +1,54 @@
-# 🎄 Advent of Code - Bun Template
+# 🎄 Advent of Code 2025 - Bun
 
-Welcome to the Advent of Code Bun Template! This repository provides a streamlined setup for participating in the Advent of Code challenges using [Bun](https://bun.sh), a fast JavaScript all-in-one toolkit.
+My solutions for [Advent of Code 2025](https://adventofcode.com/) using [Bun](https://bun.sh).
 
-## Why This Template is Useful
-
-This template simplifies the process of tackling daily coding puzzles by providing a structured environment with essential tools and scripts. It allows you to quickly generate puzzle folders, fetch input data, and run your solutions with ease. Whether you're a seasoned coder or just starting, this template helps you focus on solving puzzles rather than setting up your development environment.
-
-Key features include:
-
-- **Easy Setup**: Clone the repository and get started with a single command.
-- **Organized Structure**: Each puzzle is neatly organized into its own folder with all necessary files.
-- **Convenient Scripts**: Run puzzles, watch for changes, and format your code effortlessly.
-- **Customizable**: Adjust your session token and target year easily through environment variables.
-
-Join the fun and challenge yourself with daily coding puzzles while enhancing your programming skills!
+This repository is based on the excellent [aoc-bun template](https://github.com/BraedenKilburn/aoc-bun) by Braeden Kilburn.
 
 ## 🚀 Quick Start
 
-**1. Create your repository**
-
-Click the "Use this template" button at the top of this repository to create your own copy. You can also [learn more about creating repositories from templates](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template#creating-a-repository-from-a-template).
-
-**2. Clone your new repository**
+**1. Clone the repository**
 
 ```bash
-git clone https://github.com/yourusername/your-repo-name.git
-cd your-repo-name
+git clone https://github.com/EliantenHolder/Advent-Of-Code-Bun-2025.git
+cd Advent-Of-Code-Bun-2025
 ```
 
-**3. Install dependencies**
+**2. Install dependencies**
 
 ```bash
 bun install
 ```
 
-**4. Set up your environment**
+**3. Run a solution**
 
 ```bash
-cp .env.sample .env
-```
-
-**5. Add your Advent of Code session token to `.env`**
-
-```bash
-AOC_SESSION=your_session_token_here
-YEAR=2024
-```
-
-**🔑 Getting Your Session Token**
-
-1. Visit [adventofcode.com](https://adventofcode.com)
-2. Open your browser's Developer Tools:
-   - Windows/Linux: Press `F12` or `Ctrl + Shift + I`
-   - macOS: Press `Cmd + Option + I`
-3. Navigate to the **Network** tab
-4. Refresh the page
-5. Click on any request to `adventofcode.com`
-6. In the request details, find the **Cookies** section
-7. Look for the `session` cookie and copy its value
-
-> **Note**: Keep your session token private and never commit it to version control!
-
-**6. Generate your first puzzle folder**
-
-```bash
-bun run aoc:generate --day 1
-```
-
-**7. Start solving!**
-
-```bash
-bun run aoc 2025 1      # Run once
+bun run aoc 2025 1      # Run once (2025 = year, 1 = day)
 bun run aoc:watch 2025 1 # Run with hot reload
 ```
 
-## 📁 What You Get
+## 📁 Structure
 
-When you generate a new puzzle, you'll get a folder with everything you need:
+Each day's solution is organized in its own folder:
 
 ```
 src/2025/1/
 ├── index.ts    # Main entry point
 ├── 1.ts        # Part one solution
 ├── 2.ts        # Part two solution
-├── input.txt   # Your puzzle input
-└── example.txt # For example test cases
+├── input.txt   # Puzzle input
+└── example.txt # Example test cases
 ```
 
-## 💡 Pro Tips
+## 💡 Notes
 
-- Use `example.txt` to test your solution with the puzzle's example data
-- The template automatically measures execution time for each part
-- Hot reload with `aoc:watch` makes testing iterations quick
-- All source files are automatically formatted with `bun run format`
+- Use `example.txt` to test with the puzzle's example data
+- Execution time is automatically measured for each part
+- Use `bun run aoc:watch` for quick iteration with hot reload
+- Code is formatted with [Biome](https://biomejs.dev/) via `bun run format`
 
-Want to try a different year? Just update `YEAR` in your `.env` file!
+## 🔗 Links
+
+- [Advent of Code](https://adventofcode.com/)
+- [Bun Documentation](https://bun.sh)
+- [Biome](https://biomejs.dev/)
+- [aoc-bun Template](https://github.com/BraedenKilburn/aoc-bun)
