@@ -1,0 +1,16 @@
+{
+	"name": "aoc-ts",
+	"version": "0.0.1",
+	"author": "Braeden Kilburn",
+	"scripts": {
+		"aoc": "bun run index.ts",
+		"aoc:generate": "bun run src/generate.ts",
+		"aoc:watch": "bun run --watch index.ts",
+		"format": "prettier 'src/**/*.ts' --write"
+	},
+	"devDependencies": {
+		"@types/bun": "^1.3.3",
+		"prettier": "3.7.3",
+		"typescript": "^5.9.3"
+	}
+}
