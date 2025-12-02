@@ -1,6 +1,6 @@
-import { parseArgs } from "util";
 import { join } from "node:path";
 import { $ } from "bun";
+import { parseArgs } from "util";
 
 // 1. Configuration & Validation
 const { values } = parseArgs({
@@ -39,25 +39,18 @@ if (await Bun.file(join(dayDir, "input.txt")).exists()) {
 
 // 4. Data Fetching
 async function fetchInput() {
-  const response = await fetch(
-    `https://adventofcode.com/${year}/day/${day}/input`,
-    {
-      headers: { cookie: `session=${session}` },
-    },
-  );
+  const response = await fetch(`https://adventofcode.com/${year}/day/${day}/input`, {
+    headers: { cookie: `session=${session}` },
+  });
 
   if (!response.ok) {
     if (response.status === 404) {
-      throw new Error(
-        `Day ${day} not found for year ${year}. It may not be available yet.`,
-      );
+      throw new Error(`Day ${day} not found for year ${year}. It may not be available yet.`);
     }
     if (response.status === 401 || response.status === 403) {
       throw new Error("Authentication failed. Check your AOC_SESSION cookie.");
     }
-    throw new Error(
-      `Failed to fetch input: ${response.status} ${response.statusText}`,
-    );
+    throw new Error(`Failed to fetch input: ${response.status} ${response.statusText}`);
   }
 
   return response.text();
@@ -80,14 +73,8 @@ try {
     Bun.write(join(dayDir, "input.txt"), input.trimEnd()),
     Bun.write(join(dayDir, "example.txt"), ""),
     Bun.write(join(dayDir, "index.ts"), indexTemplate),
-    Bun.write(
-      join(dayDir, "1.ts"),
-      solutionTemplate.replace("partNumber", "partOne"),
-    ),
-    Bun.write(
-      join(dayDir, "2.ts"),
-      solutionTemplate.replace("partNumber", "partTwo"),
-    ),
+    Bun.write(join(dayDir, "1.ts"), solutionTemplate.replace("partNumber", "partOne")),
+    Bun.write(join(dayDir, "2.ts"), solutionTemplate.replace("partNumber", "partTwo")),
   ]);
 
   console.log(`✅ Ready: ${dayDir}`);
