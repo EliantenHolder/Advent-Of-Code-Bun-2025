@@ -1,0 +1,64 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.3.8/schema.json",
+  "formatter": {
+    "enabled": true,
+    "formatWithErrors": false,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineEnding": "lf",
+    "lineWidth": 120,
+    "bracketSpacing": true,
+    "bracketSameLine": false
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true,
+      "correctness": {
+        "noConstAssign": "error",
+        "noUndeclaredVariables": "error"
+      },
+      "style": {
+        "useConst": "error",
+        "useImportType": "warn",
+        "useTemplate": "warn",
+        "useSingleVarDeclarator": "warn",
+        "useForOf": "warn",
+        "noImplicitBoolean": "warn",
+        "useDefaultParameterLast": "warn"
+      },
+      "suspicious": {
+        "noExplicitAny": "error",
+        "noImplicitAnyLet": "error",
+        "noCatchAssign": "error",
+        "noClassAssign": "error",
+        "noDoubleEquals": "warn",
+        "noConsole": "off"
+      }
+    }
+  },
+  "javascript": {
+    "globals": [
+      "console",
+      "Bun",
+      "describe",
+      "it",
+      "expect",
+      "beforeEach",
+      "afterEach"
+    ],
+    "parser": {
+      "unsafeParameterDecoratorsEnabled": true
+    }
+  },
+  "json": {
+    "formatter": {
+      "trailingCommas": "none"
+    }
+  },
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    "useIgnoreFile": true
+  }
+}
