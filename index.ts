@@ -24,4 +24,9 @@ if (values.example) {
   process.env.AOC_EXAMPLE = "1";
 }
 
+// Use Bun's fast string trimming and line splitting
+globalThis.splitLines = (input: string): string[] => {
+  return input.trim().split("\n");
+};
+
 await import(`./src/${year}/${day}/index.ts`);

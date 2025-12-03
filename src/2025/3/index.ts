@@ -23,6 +23,3 @@ console.log(`🎄 Part Two: ${two}`);
 console.log(`⏰ The script took ${end - start}ms to run.`);
 console.log(`⏰ Part one took ${lap - start}ms to run.`);
 console.log(`⏰ Part two took ${end - lap}ms to run.`);
-```
-
-Now let me update day 1 and 2 using the tool:

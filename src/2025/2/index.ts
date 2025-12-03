@@ -1,12 +1,12 @@
 import partOne from "./1";
 import partTwoNaive from "./2";
 import partTwoPerformant from "./2.performant";
-import example from "./example.txt";
-// With Bun, text files can be imported as strings
-import input from "./input.txt";
 
 const useExample = process.env.AOC_EXAMPLE === "1";
-const inputArray = (useExample ? example : input).split("\n");
+const fileName = useExample ? "example.txt" : "input.txt";
+const filePath = `${import.meta.dir}/${fileName}`;
+const inputText = await Bun.file(filePath).text();
+const inputArray = inputText.trim().split("\n");
 
 const startTotal = performance.now();
 
@@ -46,3 +46,6 @@ if (twoNaive === twoPerformant) {
   console.log(`   Performant: ${twoPerformant}`);
   console.log(`   Difference: ${twoPerformant - twoNaive}`);
 }
+```
+
+Now let me commit these changes:
